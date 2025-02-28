@@ -1,0 +1,27 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+fastapi = "==0.94.0"
+fastapi-camelcase = "==1.0.5"
+fastapi-pagination = "==0.12.26"
+fastapi-utils = "==0.7.0"
+motor = "==3.5.1"
+pydantic = {extras = ["email"], version = "*"}
+pymongo = "==4.8.0"
+requests = "==2.32.3"
+requests-async = "==0.6.2"
+sqlalchemy = "==2.0.31"
+urllib3 = "==2.2.2"
+uvicorn = "==0.30.1"
+python-decouple = "==3.8"
+python-dotenv = "==1.0.1"
+jwcrypto = "==1.3.1"
+sendgrid = "==6.11.0"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
