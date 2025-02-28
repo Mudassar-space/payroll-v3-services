@@ -30,8 +30,9 @@ app.add_middleware(
 app.include_router(router)
 add_pagination(app)
 
-if __name__ == '__main__':
-    uvicorn.run('main:app', host='192.168.1.12', port=8302, reload=True)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8001)
 
 @app.get("/")
 async def get_root():
