@@ -1,7 +1,7 @@
 
 from fastapi.encoders import jsonable_encoder
 from fastapi.responses import JSONResponse
-from requests_async.exceptions import ConnectionError as ConnectionException
+# from requests_async.exceptions import ConnectionError as ConnectionException
 
 from app.constants.constants import AUTH_LINK, IP, LINK_FOR_FORGET
 from app.config.config import (FROM_EMAIL, EMAIL_PASSWORD)
