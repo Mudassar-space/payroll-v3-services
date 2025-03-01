@@ -260,13 +260,13 @@ class UserController():
                     'name': f"{api_response_data.first_name} {api_response_data.last_name}",
                     'email': api_response_data.email
                 })
-        except ConnectionException:
-            con_error_resp = {
-                "status": False,
-                "message": ErrorMessages.rbac_connection_error.value
-            }
-            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                                content=con_error_resp)
+        # except ConnectionException:
+        #     con_error_resp = {
+        #         "status": False,
+        #         "message": ErrorMessages.rbac_connection_error.value
+        #     }
+        #     return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+        #                         content=con_error_resp)
         except Exception as e:
             print(e)
             error = {

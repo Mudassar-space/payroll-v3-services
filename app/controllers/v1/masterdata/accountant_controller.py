@@ -18,7 +18,7 @@ from app.models.common.logger import Logger
 from app.models.master_data.accountant import AccountantListResponseModel, AccountantResponse, SingleAccountantModel
 
 
-from requests_async.exceptions import ConnectionError as ConnectionException
+# from requests_async.exceptions import ConnectionError as ConnectionException
 
 
 
@@ -91,12 +91,12 @@ class AccountantController():
             if delete_response.success == False:    
                 return JSONResponse(status_code=status.HTTP_404_NOT_FOUND,
                                     content=jsonable_encoder(delete_response))
-        except ConnectionException:
-            con_error = {
-                "status": False,
-                "message": "Master Data API connection not established."
-            }
-            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content=con_error)
+        # except ConnectionException:
+        #     con_error = {
+        #         "status": False,
+        #         "message": "Master Data API connection not established."
+        #     }
+        #     return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content=con_error)
         except Exception as e:
             self.logger.error(e)
             message = ResponseMessage(
@@ -127,12 +127,12 @@ class AccountantController():
             if isinstance(detail_response,AccountantResponse):
                 return JSONResponse(status_code=status.HTTP_200_OK, content=jsonable_encoder(detail_response))
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=jsonable_encoder(detail_response))
-        except ConnectionException:
-            con_error = {
-                "status": False,
-                "message": "Master Data API connection not established."
-            }
-            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content=con_error)
+        # except ConnectionException:
+        #     con_error = {
+        #         "status": False,
+        #         "message": "Master Data API connection not established."
+        #     }
+        #     return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content=con_error)
         except Exception as e:
             self.logger.error(e)
             # print(e)
@@ -234,12 +234,12 @@ class AccountantController():
             if type(detail_response) is list:
                 return JSONResponse(status_code=status.HTTP_200_OK, content=jsonable_encoder(detail_response))
             return JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=jsonable_encoder(detail_response))
-        except ConnectionException:
-            con_error = {
-                "status": False,
-                "message": "Master Data API connection not established."
-            }
-            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content=con_error)
+        # except ConnectionException:
+        #     con_error = {
+        #         "status": False,
+        #         "message": "Master Data API connection not established."
+        #     }
+        #     return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, content=con_error)
         except Exception as e:
             self.logger.error(e)
             # print(e)
