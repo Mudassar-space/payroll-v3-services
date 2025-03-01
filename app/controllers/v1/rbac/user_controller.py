@@ -67,13 +67,6 @@ class UserController():
                 return_data = UserOutLogin(**response, status=True, message="You are logged in successfully'")
                 return JSONResponse(status_code=status.HTTP_200_OK, content=jsonable_encoder(return_data))
             return JSONResponse(status_code=response.status_code, content=response)
-        except ConnectionException:
-            con_error_resp = {
-                "status": False,
-                "message": ErrorMessages.rbac_connection_error.value
-            }
-            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                                content=con_error_resp)
         except Exception as e:
             print(e)
             error = {
@@ -157,13 +150,6 @@ class UserController():
                                     content=error)
 
             return JSONResponse(status_code=status.HTTP_201_CREATED, content={"success": True, "message": "User register successfully."})
-        except ConnectionException:
-            con_error_resp = {
-                "status": False,
-                "message": ErrorMessages.rbac_connection_error.value
-            }
-            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                                content=con_error_resp)
         except Exception as e:
             print(e)
             error = {
@@ -246,13 +232,6 @@ class UserController():
                 "status": True,
                 "message": "Email send successfully"
             })
-        except ConnectionException:
-            con_error_resp = {
-                "status": False,
-                "message": ErrorMessages.rbac_connection_error.value
-            }
-            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                                content=con_error_resp)
         except Exception as e:
             print(e)
             error = {
@@ -315,13 +294,6 @@ class UserController():
                     'name': f"{api_response_data.first_name} {api_response_data.last_name}",
                     'email': api_response_data.email
                 })
-        except ConnectionException:
-            con_error_resp = {
-                "status": False,
-                "message": ErrorMessages.rbac_connection_error.value
-            }
-            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                                content=con_error_resp)
         except Exception as e:
             print(e)
             con_error = {
@@ -349,13 +321,6 @@ class UserController():
             # return JSONResponse(status_code=status.HTTP_200_OK ,content="Password has been updated.")
             return JSONResponse(status_code=status.HTTP_200_OK, content = {"success": True, "message": "Password has been updated."})
 
-        except ConnectionException:
-            con_error_resp = {
-                "status": False,
-                "message": ErrorMessages.rbac_connection_error.value
-            }
-            return JSONResponse(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-                                content=con_error_resp)
         except Exception as e:
             print(e)
             error = {
