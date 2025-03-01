@@ -14,7 +14,7 @@ from app.models.common.ddl_entity import DDLEntity
 from app.models.common.logger import Logger
 
 
-from requests_async.exceptions import ConnectionError as ConnectionException
+# from requests_async.exceptions import ConnectionError as ConnectionException
 
 from app.models.master_data.accountant_bank import AccountantBank, AccountantBankResponse
 from app.models.master_data.client_bank_model import ClientBank, ClientBankResponse
