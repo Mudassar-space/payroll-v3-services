@@ -15,8 +15,8 @@ from app.models.common.logger import Logger
 from app.models.master_data.accountant import AccountantResponse, SingleAccountantModel
 
 
-from requests_async.exceptions import ConnectionError as ConnectionException
-
+# from requests_async.exceptions import ConnectionError as ConnectionException
+# 
 from app.models.master_data.accountant_bank import AccountantBank, AccountantBankResponse
 
 
